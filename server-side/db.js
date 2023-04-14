@@ -16,25 +16,29 @@ module.exports.insert_data= async(data)=>{
     let db = await this.connect_db();
     let collection = db.collection("user_data");
     await collection.insertOne(data);
+    console.log('request serviced')
     await this.close_db();
 }
 module.exports.update_data= async(enroll,data)=>{
     let db = await this.connect_db();
     let collection = db.collection("user_data");
     await collection.update(({Enrollment:enroll},{$set:data}));
+    console.log('request serviced')
     await this.close_db();
 
 }
 module.exports.delete_data= async(enroll)=>{
     let db = await this.connect_db();
     let collection = db.collection("user_data");
-    await collection.update(({Enrollment:enroll},{$set:data}));
+    await collection.deleteOne(({Enrollment:enroll}));
+    console.log('request serviced')
     await this.close_db();
 }
 module.exports.read_data= async(enroll)=>{
     let db = await this.connect_db();
     let collection = db.collection("user_data");
-    let record= collection.find({Enrollment:enroll});
-    return record;
+    let record=  collection.findOne({Enrollment:enroll});
+    console.log('request serviced')
     await this.close_db();
+    return record;
 }

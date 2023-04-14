@@ -13,20 +13,23 @@ app.set("port", 4000);
 // db.connect_db();
 app.post("/create",function(req,res){
     db.insert_data(req.body);
-   console.log(req.body);
+   console.log('insert requested');
     res.send({"msg":'created Successfully'})});
 app.post("/update",function(req,res){
+    console.log('update requested')
     db.update_data(req.body.Enrollment,req.body);
     res.send({"msg":'updated Successfully'})
 
 });
 app.post("/delete",function(req,res){
+    console.log('delete requested')
     db.delete_data(req.body.Enrollment);
     res.send({"msg":'deleted Successfully'})
 });
 app.post("/read",function(req,res){
+    console.log('search requested')
     data=db.read_data(req.body.Enrollment);
-    res.send({data})
+    res.send(data)
 });
 
 

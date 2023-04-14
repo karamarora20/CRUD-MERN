@@ -26,7 +26,7 @@ const Delete_form=()=> {
 
 
     fetch(
-      "http://127.0.0.1:4000/create",
+      "http://127.0.0.1:4000/delete",
       {
         method: "POST",
         body: JSON.stringify(data),
@@ -47,7 +47,7 @@ const Delete_form=()=> {
     exit={{opacity:0,transitionEnd: { display: "none" }}}
     >
   <Headerr txt="Enter The Enrollment ID to Delete"/>
-  <form className="form-container">
+  <form className="form-container" onSubmit={handleSubmit}>
     <div>
 <INP_field Name={"Enrollment"} onchange={handleChange}/>
 

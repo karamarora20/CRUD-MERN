@@ -62,7 +62,7 @@ const Update_form=()=> {
     exit={{opacity:0,transitionEnd: { display: "none" }}}
     >
   <Headerr txt="Enter Enrollment ID and details"/>
-  <form className="form-container">
+  <form className="form-container" onSubmit={handleSubmit}>
     <div>
 <INP_field Name={"Enrollment"} onchange={handleChange}/>
 <INP_field Name={"Name"} onchange={handleChange}/>
