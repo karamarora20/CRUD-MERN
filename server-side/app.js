@@ -2,6 +2,7 @@ const express= require('express');
 const app = express();
 const cors= require('cors')
 const bodyParser = require('body-parser');
+require('dotenv').config();
 db=require('./db.js');
 
 app.use(bodyParser.json());
@@ -33,8 +34,8 @@ app.post("/read",async function(req,res){
 });
 
 
-app.listen(app.get("port"));
+app.listen(process.env.PORT || 4000);
 
 console.log("Server on port", app.get("port"));
 
-// export default app;
+// Path: server-side\db.js
