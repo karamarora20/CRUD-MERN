@@ -28,10 +28,10 @@ const Delete_form=()=> {
   
   return(
     <div >
-  <Headerr txt="Enter The ID to Delete"/>
+  <Headerr txt="Enter The Enrollment ID to Delete"/>
   <form className="form-container">
     <div>
-<INP_field Name={"ID"} onchange={handleChange}/>
+<INP_field Name={"Enrollment"} onchange={handleChange}/>
 
 </div>
 <button className="submit">Delete</button>

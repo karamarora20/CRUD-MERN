@@ -1,6 +1,6 @@
 import '../App.css';
 const INPform= (props) => {
-    const { handleChange,Name } = props;
+    const { onchange,Name } = props;
     return (
         
             <div >
@@ -9,7 +9,7 @@ const INPform= (props) => {
                 type="text"
                 name={Name}
                 placeholder={`Enter ${Name}`}
-                onChange={handleChange}
+                onChange={onchange}
             />
             </div>
     );

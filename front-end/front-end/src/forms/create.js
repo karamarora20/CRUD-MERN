@@ -5,21 +5,21 @@ import { useReducer, useState } from "react";
 
 
 const Create_form= ()=>{
-  const[name,setName]=useState("");
-  const[enroll,setenroll]=useState("");
+  const[Name,setName]=useState("");
+  const[Enroll,setenroll]=useState("");
   const[Email,setemail]=useState("");
-  const[address,setaddress]=useState("");
-  const[city,setcity]=useState("");
-  const[phone,setphone]=useState("");
+  const[Address,setaddress]=useState("");
+  const[City,setcity]=useState("");
+  const[Phone,setphone]=useState("");
 
   const [formInput, setFormInput] = useReducer((state, newState) => ({ ...state, ...newState }),
     {
-      name: "",
-      enroll: "",
-      email: "",
-      address: "",
-      city: "",
-      phone: ""
+      Name: "",
+      Enrollment: "",
+      Email: "",
+      Address: "",
+      City: "",
+      Phone: ""
     }
   );
 
@@ -60,7 +60,7 @@ const Create_form= ()=>{
       <form className="form-container" onSubmit={handleSubmit}>
         <div>
     <INP_field Name={"Name"} onchange={handleChange}/>
-    <INP_field Name={"ID"} onchange={handleChange}/>
+    <INP_field Name={"Enrollment"} onchange={handleChange}/>
     <INP_field Name={"Email"} onchange={handleChange}/>
     <INP_field Name={"Phone"} onchange={handleChange}/>
     <INP_field Name={"Address"} onchange={handleChange}/>

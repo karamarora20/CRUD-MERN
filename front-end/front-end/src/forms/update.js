@@ -56,11 +56,11 @@ const Update_form=()=> {
   
   return(
     <div >
-  <Headerr txt="Enter ID and details"/>
+  <Headerr txt="Enter Enrollment ID and details"/>
   <form className="form-container">
     <div>
+<INP_field Name={"Enrollment"} onchange={handleChange}/>
 <INP_field Name={"Name"} onchange={handleChange}/>
-    <INP_field Name={"ID"} onchange={handleChange}/>
 <INP_field Name={"Email"} onchange={handleChange}/>
 <INP_field Name={"Phone"} onchange={handleChange}/>
 <INP_field Name={"Address"} onchange={handleChange}/>

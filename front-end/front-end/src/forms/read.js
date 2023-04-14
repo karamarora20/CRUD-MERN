@@ -4,10 +4,10 @@ import '../App.css';
 const handleChange=(e)=>{}
 const read_form=()=> {  return(
     <div >
-  <Headerr txt="Enter ID to search"/>
+  <Headerr txt="Enter Enrollment ID to search"/>
   <form className="form-container">
     <div>
-    <INP_field Name={"ID"} onchange={handleChange}/>
+    <INP_field Name={"Enrollment"} onchange={handleChange}/>
 <INP_field Name={"Name"} onchange={handleChange}/>
 <INP_field Name={"Email"} onchange={handleChange}/>
 <INP_field Name={"Phone"} onchange={handleChange}/>
