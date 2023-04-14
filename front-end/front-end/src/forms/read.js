@@ -2,6 +2,7 @@ import Headerr from "../components/header";
 import INP_field from "../components/form-input";
 import { useState } from "react";
 import '../App.css';
+import { motion } from 'framer-motion'
 const handleChange=(e)=>{}
 const Read_form=()=> { 
   const[enroll,setenroll]=useState("");
@@ -41,7 +42,11 @@ const Read_form=()=> {
   
   
   return(
-    <div >
+    <motion.div
+    initial={{opacity:0}}
+    animate={{opacity:1, transition:{duration:0.2}}}
+    exit={{opacity:0,transitionEnd: { display: "none" }}}
+    >
   <Headerr txt="Enter Enrollment ID to search"/>
   <form className="form-container">
     <div>
@@ -54,6 +59,6 @@ const Read_form=()=> {
 </div>
 <button className="submit">Search</button>
 </form>
-</div>
+</motion.div>
 );};
 export default Read_form;

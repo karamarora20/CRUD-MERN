@@ -2,7 +2,7 @@ import Headerr from "../components/header";
 import INP_field from "../components/form-input";
 import { useState, useReducer } from "react";
 import '../App.css';
-
+import{motion} from 'framer-motion'
 const Delete_form=()=> { 
   
  
@@ -41,7 +41,11 @@ const Delete_form=()=> {
   };
   
   return(
-    <div >
+    <motion.div 
+    initial={{opacity:0}}
+    animate={{opacity:1, transition:{duration:0.2}}}
+    exit={{opacity:0,transitionEnd: { display: "none" }}}
+    >
   <Headerr txt="Enter The Enrollment ID to Delete"/>
   <form className="form-container">
     <div>
@@ -50,6 +54,6 @@ const Delete_form=()=> {
 </div>
 <button className="submit">Delete</button>
 </form>
-</div>
+</motion.div>
 );};
 export default Delete_form;

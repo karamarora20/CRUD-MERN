@@ -2,6 +2,7 @@ import Headerr from "../components/header";
 import INP_field from "../components/form-input";
 import '../App.css';
 import { useState, useReducer } from "react";
+import {motion} from 'framer-motion'
 const handleChange=(e)=>{}
 const Update_form=()=> {  
   
@@ -55,7 +56,11 @@ const Update_form=()=> {
   };
   
   return(
-    <div >
+    <motion.div
+    initial={{opacity:0}}
+    animate={{opacity:1, transition:{duration:0.2}}}
+    exit={{opacity:0,transitionEnd: { display: "none" }}}
+    >
   <Headerr txt="Enter Enrollment ID and details"/>
   <form className="form-container">
     <div>
@@ -68,6 +73,6 @@ const Update_form=()=> {
 </div>
 <button className="submit">Update</button>
 </form>
-</div>
+</motion.div>
 );};
 export default Update_form;

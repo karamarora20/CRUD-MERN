@@ -2,6 +2,7 @@ import Headerr from "../components/header";
 import INP_field from "../components/form-input";
 import '../App.css';
 import { useReducer, useState } from "react";
+import{motion} from 'framer-motion'
 
 
 const Create_form= ()=>{
@@ -55,7 +56,11 @@ const Create_form= ()=>{
   };
 
     return(
-        <div >
+        <motion.div
+        initial={{opacity:0}}
+        animate={{opacity:1, transition:{duration:0.35}}}
+        exit={{opacity:0,transitionEnd: { display: "none" }}}
+        >
       <Headerr txt="Enter your details"/>
       <form className="form-container" onSubmit={handleSubmit}>
         <div>
@@ -68,7 +73,7 @@ const Create_form= ()=>{
     </div>
     <button className="submit">Submit</button>
     </form>
-    </div>
+    </motion.div>
     );
 }
 export default Create_form;
