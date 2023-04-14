@@ -10,8 +10,11 @@ const Delete_form=()=> {
 
 
   const handleChange=async (event) => {
-    setenroll(event.target.value)
-    console.log(enroll);
+    const name = event.target.name;
+    const value = event.target.value;
+    console.log(name, value);
+    setenroll(value)
+    console.log(name,value);
   };
 
   const handleSubmit = (event) => {
