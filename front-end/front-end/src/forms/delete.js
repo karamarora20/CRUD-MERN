@@ -2,9 +2,7 @@ import Headerr from "../components/header";
 import INP_field from "../components/form-input";
 import { useState, useReducer } from "react";
 import '../App.css';
-const handleChange=(e)=>{
-  
-}
+
 const Delete_form=()=> { 
   
  
@@ -13,17 +11,30 @@ const Delete_form=()=> {
 
   const handleChange=async (event) => {
     setenroll(event.target.value)
+    console.log(enroll);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    let data = {
+      'Enrollment': enroll
+    };
+
+
     fetch(
-      `http://127.0.0.1:4000/delete/:${enroll}}`,
+      "http://127.0.0.1:4000/create",
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     )
       .then((Response) => Response.json())
-      .then((response) => alert("success:", response.msg))
+      .then((response) => console.log("success:", response.msg))
       .catch((err) => console.log("error:", err));
-
   };
   
   return(
