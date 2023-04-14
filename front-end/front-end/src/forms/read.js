@@ -23,7 +23,6 @@ const Read_form=()=> {
     let data = {
       'Enrollment': enroll
     };
-    console.log(record);
 
     fetch(
       "http://127.0.0.1:4000/read",
@@ -37,7 +36,7 @@ const Read_form=()=> {
     )
       .then((Response) => Response.json())
       .then((response) => setrecord(response))
-      .catch((err) => console.log("error:", err));
+      .catch((err) => alert("error: cannot Read"));
   };
   
   

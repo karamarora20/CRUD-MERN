@@ -26,9 +26,9 @@ app.post("/delete",function(req,res){
     db.delete_data(req.body.Enrollment);
     res.send({"msg":'deleted Successfully'})
 });
-app.post("/read",function(req,res){
-    console.log('search requested')
-    data=db.read_data(req.body.Enrollment);
+app.post("/read",async function(req,res){
+    console.log('search requested', req.body)
+    let data=await db.read_data(req.body);
     res.send(data)
 });
 

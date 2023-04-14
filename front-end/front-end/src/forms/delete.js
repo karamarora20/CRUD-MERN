@@ -36,8 +36,8 @@ const Delete_form=()=> {
       }
     )
       .then((Response) => Response.json())
-      .then((response) => console.log("success:", response.msg))
-      .catch((err) => console.log("error:", err));
+      .then((response) => alert(response.msg))
+      .catch((err) => alert("error:", err));
   };
   
   return(

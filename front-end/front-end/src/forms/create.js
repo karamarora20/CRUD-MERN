@@ -52,7 +52,7 @@ const Create_form= ()=>{
     )
       .then((Response) => Response.json())
       .then((response) => alert("success"))
-      .catch((err) => console.log("error:", err));
+      .catch((err) => alert("error:", err));
   };
 
     return(

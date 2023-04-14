@@ -14,16 +14,15 @@ const Update_form=()=> {
   const[phone,setphone]=useState("");
 
   const [formInput, setFormInput] = useReducer((state, newState) => ({ ...state, ...newState }),
-    {
-      name: "",
-      enroll: "",
-      email: "",
-      address: "",
-      city: "",
-      phone: ""
-    }
-  );
-
+  {
+    Name: "",
+    Enrollment: "",
+    Email: "",
+    Address: "",
+    City: "",
+    Phone: ""
+  }
+);
 
   const handleChange=async (event) => {
     const name = event.target.name;
@@ -51,8 +50,8 @@ const Update_form=()=> {
       }
     )
       .then((Response) => Response.json())
-      .then((response) => console.log("success:", response.msg))
-      .catch((err) => console.log("error:", err));
+      .then((response) => alert(response.msg))
+      .catch((err) => alert("error: cannot Update" ));
   };
   
   return(
